@@ -13,6 +13,8 @@
 		BB73FAF728D8748300BB024B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB73FAF528D8748300BB024B /* Main.storyboard */; };
 		BB73FAF928D8748400BB024B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB73FAF828D8748400BB024B /* Assets.xcassets */; };
 		BB73FAFC28D8748400BB024B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB73FAFA28D8748400BB024B /* LaunchScreen.storyboard */; };
+		BB73FB0428D9BC8900BB024B /* ConcentrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */; };
+		BB73FB0628D9BD2A00BB024B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73FB0528D9BD2A00BB024B /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BB73FAF828D8748400BB024B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB73FAFB28D8748400BB024B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB73FAFD28D8748400BB024B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationModel.swift; sourceTree = SOURCE_ROOT; };
+		BB73FB0528D9BD2A00BB024B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		BB73FAEE28D8748300BB024B /* ConcentrationGame */ = {
 			isa = PBXGroup;
 			children = (
+				BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */,
+				BB73FB0528D9BD2A00BB024B /* Card.swift */,
 				BB73FAEF28D8748300BB024B /* AppDelegate.swift */,
 				BB73FAF128D8748300BB024B /* SceneDelegate.swift */,
 				BB73FAF328D8748300BB024B /* ViewController.swift */,
@@ -140,7 +146,9 @@
 			files = (
 				BB73FAF428D8748300BB024B /* ViewController.swift in Sources */,
 				BB73FAF028D8748300BB024B /* AppDelegate.swift in Sources */,
+				BB73FB0628D9BD2A00BB024B /* Card.swift in Sources */,
 				BB73FAF228D8748300BB024B /* SceneDelegate.swift in Sources */,
+				BB73FB0428D9BC8900BB024B /* ConcentrationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
