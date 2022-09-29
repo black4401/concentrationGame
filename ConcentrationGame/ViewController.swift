@@ -11,24 +11,25 @@ class ViewController: UIViewController {
     
     private lazy var game = ConcentrationModel(numberOfPairsOfCards: numberOfPairsOFCards)
     
-    private var emojiChoices = ["🤡", "🎃", "👻" , "🤠", "😱", "👀", "🥸", "☠️"]
-    private var numbers = ["1", "2", "3" , "4", "5", "6", "7", "8"]
-    private var animals = ["🐱", "🐶", "🐷" , "🐭", "🐼", "🐻", "🦊", "🐝"]
-    private var weather = ["⚡️", "🔥", "🌈", "🌪", "☀️", "🌧", "❄️", "☃️"]
-    private var clothes = ["🧥", "👗", "👔", "👖", "👕", "👚", "🦺", "🥼"]
-    private var astrology = ["💫", "🪐", "🌍", "🌙", "🌓", "🌑", "🌗", "🌕"]
+    private var themeSelector = ThemeFactory()
     
-    lazy private var themes = [emojiChoices, numbers, animals, weather]
+    private lazy var currentTheme = themeSelector.getRandomTheme()
+    private lazy var currentEmoji = currentTheme.emojiChoices
+    private lazy var currentCardColour = currentTheme.cardColour
+    private lazy var currentBackgroundColout = currentTheme.backgroundColour
     
-    func chooseRandomTheme() -> [String]{
-        return themes.randomElement()!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = currentBackgroundColout
+        for index in cardButtons.indices {
+            cardButtons[index].backgroundColor = currentCardColour
+        }
     }
-    lazy var currentTheme = chooseRandomTheme()
     
     var numberOfPairsOFCards: Int {
         return (cardButtons.count + 1) / 2
     }
-
     
     @IBOutlet weak var pointsCountLabel: UILabel!
     
@@ -66,7 +67,7 @@ class ViewController: UIViewController {
             }
             else{
                 button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? UIColor.clear : UIColor.systemOrange
+                button.backgroundColor = card.isMatched ? UIColor.clear : currentCardColour
                 if card.isMatched {
                     button.isEnabled = false
                 }
@@ -80,8 +81,8 @@ class ViewController: UIViewController {
     private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
-        if emoji[card] == nil, currentTheme.count > 0 {
-            emoji[card] = currentTheme.remove(at: currentTheme.count.arc4random)
+        if emoji[card] == nil, currentEmoji.count > 0 {
+            emoji[card] = currentEmoji.remove(at: currentEmoji.count.arc4random)
         }
         return emoji[card] ?? "?"
     }
