@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private lazy var game = ConcentrationModel(numberOfPairsOfCards: numberOfPairsOFCards)
     
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var numberOfPairsOFCards: Int {
+   private var numberOfPairsOFCards: Int {
         return (cardButtons.count + 1) / 2
     }
     
@@ -46,8 +46,7 @@ class ViewController: UIViewController {
             
             game.chooseCard(at: cardNumber)
             updateViewFromModal()
-        }
-        else{
+        } else{
             print("not in range")
         }
     }
@@ -64,14 +63,12 @@ class ViewController: UIViewController {
                 button.setTitle(emoji(for: card), for: UIControl.State.normal)
                 button.backgroundColor = UIColor.white
                 button.isEnabled = false
-            }
-            else{
+            } else{
                 button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.isMatched ? UIColor.clear : currentCardColour
                 if card.isMatched {
                     button.isEnabled = false
-                }
-                else {
+                } else {
                     button.isEnabled = true
                 }
             }
@@ -81,7 +78,9 @@ class ViewController: UIViewController {
     private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
-        if emoji[card] == nil, currentEmoji.count > 0 {
+        if emoji[card] == nil,
+           currentEmoji.count > 0 {
+            
             emoji[card] = currentEmoji.remove(at: currentEmoji.count.arc4random)
         }
         return emoji[card] ?? "?"
@@ -96,8 +95,7 @@ extension Int {
     var arc4random: Int {
         if self == 0 {
             return 0
-        }
-        else if self < 0{
+        } else if self < 0{
             return -Int(arc4random_uniform(UInt32(self)))
         }
         return Int(arc4random_uniform(UInt32(self)))

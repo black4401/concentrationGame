@@ -13,7 +13,7 @@ struct ConcentrationModel{
     private(set) var points = 0
     private(set) var flips = 0
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             return cards.indices.filter{cards[$0].isFaceUp}.oneAndOnly
         }
@@ -45,8 +45,7 @@ struct ConcentrationModel{
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                     points += 2
-                }
-                else {
+                } else {
                     if cards[index].wasFlipped {
                         points -= 1
                     }
@@ -59,8 +58,7 @@ struct ConcentrationModel{
                 cards[index].isFaceUp = true
                 cards[index].wasFlipped = true
                 cards[matchIndex].wasFlipped = true
-            }
-            else{
+            } else{
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }

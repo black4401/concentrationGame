@@ -10,7 +10,6 @@ import Foundation
 
 struct Card: Hashable
 {
-    //var hashValue: Int { return identifier}
     func hash(into hasher: inout Hasher) {
             hasher.combine(identifier)
         }
