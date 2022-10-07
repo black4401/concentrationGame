@@ -16,7 +16,6 @@
 		BB73FB0428D9BC8900BB024B /* ConcentrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */; };
 		BB73FB0628D9BD2A00BB024B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73FB0528D9BD2A00BB024B /* Card.swift */; };
 		BBCE8C6228E590FB00CD5D82 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE8C6128E590FB00CD5D82 /* Theme.swift */; };
-		BBCE8C6428E591CD00CD5D82 /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE8C6328E591CD00CD5D82 /* ThemeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationModel.swift; sourceTree = SOURCE_ROOT; };
 		BB73FB0528D9BD2A00BB024B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BBCE8C6128E590FB00CD5D82 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		BBCE8C6328E591CD00CD5D82 /* ThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 		BB73FAEE28D8748300BB024B /* ConcentrationGame */ = {
 			isa = PBXGroup;
 			children = (
-				BBCE8C6328E591CD00CD5D82 /* ThemeFactory.swift */,
 				BBCE8C6128E590FB00CD5D82 /* Theme.swift */,
 				BB73FB0328D9BC8900BB024B /* ConcentrationModel.swift */,
 				BB73FB0528D9BD2A00BB024B /* Card.swift */,
@@ -155,7 +152,6 @@
 				BB73FB0628D9BD2A00BB024B /* Card.swift in Sources */,
 				BBCE8C6228E590FB00CD5D82 /* Theme.swift in Sources */,
 				BB73FAF228D8748300BB024B /* SceneDelegate.swift in Sources */,
-				BBCE8C6428E591CD00CD5D82 /* ThemeFactory.swift in Sources */,
 				BB73FB0428D9BC8900BB024B /* ConcentrationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

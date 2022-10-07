@@ -11,23 +11,19 @@ class MainViewController: UIViewController {
     
     private lazy var game = ConcentrationModel(numberOfPairsOfCards: numberOfPairsOFCards)
     
-    private var themeSelector = ThemeFactory()
-    
-    private lazy var currentTheme = themeSelector.getRandomTheme()
-    private lazy var currentEmoji = currentTheme.emojiChoices
-    private lazy var currentCardColour = currentTheme.cardColour
-    private lazy var currentBackgroundColout = currentTheme.backgroundColour
+    private var theme: Theme = Theme.getRandomTheme()
+    private lazy var currentEmoji = theme.emojiChoices
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = currentBackgroundColout
+        self.view.backgroundColor = theme.backgroundColour
         for index in cardButtons.indices {
-            cardButtons[index].backgroundColor = currentCardColour
+            cardButtons[index].backgroundColor = theme.cardColour
         }
     }
     
-   private var numberOfPairsOFCards: Int {
+    private var numberOfPairsOFCards: Int {
         return (cardButtons.count + 1) / 2
     }
     
@@ -43,7 +39,6 @@ class MainViewController: UIViewController {
     
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.firstIndex(of: sender) {
-            
             game.chooseCard(at: cardNumber)
             updateViewFromModal()
         } else{
@@ -65,7 +60,7 @@ class MainViewController: UIViewController {
                 button.isEnabled = false
             } else{
                 button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? UIColor.clear : currentCardColour
+                button.backgroundColor = card.isMatched ? UIColor.clear : theme.cardColour
                 if card.isMatched {
                     button.isEnabled = false
                 } else {
@@ -89,7 +84,7 @@ class MainViewController: UIViewController {
         game.newGame()
         updateViewFromModal()
     }
-
+    
 }
 extension Int {
     var arc4random: Int {
